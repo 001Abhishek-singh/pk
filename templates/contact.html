@@ -1,0 +1,242 @@
+{% extends "base.html" %}
+
+{% block title %}Contact Us - PKS & Associates{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1>Contact Us</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{{ url_for('index') }}">Home</a></li>
+                        <li class="breadcrumb-item active">Contact</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="contact-section py-5">
+    <div class="container">
+        <div class="row">
+            <!-- Contact Form -->
+            <div class="col-lg-8">
+                <div class="contact-form">
+                    <h2 class="mb-4">Get in Touch</h2>
+                    <p class="mb-4">Have questions about our services? Need expert advice? Fill out the form below and we'll get back to you within 24 hours.</p>
+                    
+                    <form method="POST">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="name" class="form-label">Full Name *</label>
+                                <input type="text" class="form-control" id="name" name="name" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="email" class="form-label">Email Address *</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="phone" class="form-label">Phone Number</label>
+                                <input type="tel" class="form-control" id="phone" name="phone">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="subject" class="form-label">Subject *</label>
+                                <select class="form-select" id="subject" name="subject" required>
+                                    <option value="">Select Subject</option>
+                                    <option value="General Enquiry">General Enquiry</option>
+                                    <option value="Service Information">Service Information</option>
+                                    <option value="Business Registration">Business Registration</option>
+                                    <option value="Tax Consultation">Tax Consultation</option>
+                                    <option value="Compliance Services">Compliance Services</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message *</label>
+                            <textarea class="form-control" id="message" name="message" rows="5" placeholder="Please describe your requirement in detail..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg">
+                            <i class="fas fa-paper-plane me-2"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Contact Info -->
+            <div class="col-lg-4">
+                <div class="contact-info">
+                    <h3 class="mb-4">Contact Information</h3>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h5>Office Address</h5>
+                            <p>123, Business Complex<br>
+                            Central Business District<br>
+                            Mumbai, Maharashtra 400001</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h5>Phone Numbers</h5>
+                            <p>+91 98765 43210<br>
+                            +91 98765 43211</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h5>Email Addresses</h5>
+                            <p>info@pks.co.in<br>
+                            contact@pks.co.in</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h5>Business Hours</h5>
+                            <p>Monday - Friday: 9:00 AM - 6:00 PM<br>
+                            Saturday: 9:00 AM - 2:00 PM<br>
+                            Sunday: Closed</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Social Links -->
+                    <div class="social-links mt-4">
+                        <h5>Follow Us</h5>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Map Section -->
+<section class="map-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="map-container">
+                    <div class="map-placeholder">
+                        <svg width="100%" height="400" viewBox="0 0 800 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="800" height="400" fill="#f8f9fa"/>
+                            <rect x="50" y="50" width="700" height="300" fill="url(#mapGradient)" rx="10"/>
+                            <circle cx="400" cy="200" r="20" fill="var(--primary-color)"/>
+                            <circle cx="400" cy="200" r="40" fill="var(--primary-color)" opacity="0.3"/>
+                            <circle cx="400" cy="200" r="60" fill="var(--primary-color)" opacity="0.1"/>
+                            <rect x="320" y="160" width="160" height="80" rx="5" fill="white"/>
+                            <rect x="330" y="170" width="140" height="12" rx="2" fill="var(--primary-color)"/>
+                            <rect x="330" y="190" width="100" height="8" rx="2" fill="#666"/>
+                            <rect x="330" y="205" width="120" height="8" rx="2" fill="#666"/>
+                            <rect x="330" y="220" width="80" height="8" rx="2" fill="#666"/>
+                            <defs>
+                                <linearGradient id="mapGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#e8f5e8;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#fff3e0;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <div class="map-overlay">
+                            <h4>Our Location</h4>
+                            <p>123, Business Complex, Central Business District, Mumbai</p>
+                            <button class="btn btn-primary btn-sm">Get Directions</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="faq-section py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center mb-5">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="accordion" id="faqAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                How quickly can you help with business registration?
+                            </button>
+                        </h2>
+                        <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Business registration timelines vary depending on the type of entity. Typically, we can complete company registration within 10-15 working days, while LLP registration takes 7-10 working days.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                What documents do I need for tax filing?
+                            </button>
+                        </h2>
+                        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                For tax filing, you'll need PAN card, Aadhaar card, Form 16 (if employed), bank statements, investment proofs, and any other relevant financial documents. We'll provide you with a complete checklist based on your specific situation.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                Do you provide ongoing compliance support?
+                            </button>
+                        </h2>
+                        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Yes, we offer comprehensive compliance support including monthly GST filing, quarterly returns, annual filings, and regular compliance monitoring to ensure your business stays compliant with all regulations.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                What are your consultation charges?
+                            </button>
+                        </h2>
+                        <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                We offer free initial consultation to understand your requirements. Detailed consultation charges vary based on the complexity of your case. Contact us for a personalized quote.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

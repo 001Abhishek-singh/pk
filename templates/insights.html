@@ -1,0 +1,235 @@
+{% extends "base.html" %}
+
+{% block title %}Insights - PKS & Associates{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1>Business Insights</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{{ url_for('index') }}">Home</a></li>
+                        <li class="breadcrumb-item active">Insights</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Insights Content -->
+<section class="insights-content py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="section-title">Stay Updated with Latest Business Insights</h2>
+            <p class="section-subtitle">Expert analysis, tax updates, and business guidance from our chartered accountants</p>
+        </div>
+
+        <!-- Featured Insights -->
+        <div class="row mb-5">
+            <div class="col-lg-8">
+                <div class="featured-insight">
+                    <div class="insight-image">
+                        <svg width="100%" height="300" viewBox="0 0 600 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="600" height="300" fill="url(#insightGradient)" rx="15"/>
+                            <circle cx="150" cy="100" r="50" fill="rgba(255,255,255,0.1)"/>
+                            <circle cx="450" cy="180" r="40" fill="rgba(255,255,255,0.15)"/>
+                            <rect x="50" y="200" width="500" height="80" rx="10" fill="rgba(255,255,255,0.9)"/>
+                            <rect x="70" y="220" width="200" height="15" rx="3" fill="var(--primary-color)"/>
+                            <rect x="70" y="245" width="300" height="10" rx="2" fill="#666"/>
+                            <defs>
+                                <linearGradient id="insightGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:var(--primary-color);stop-opacity:0.8" />
+                                    <stop offset="100%" style="stop-color:var(--secondary-color);stop-opacity:0.8" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <div class="insight-content">
+                        <span class="insight-category">Tax Updates</span>
+                        <h3>New GST Rules and Their Impact on Small Businesses</h3>
+                        <p>Understanding the latest GST amendments and how they affect small and medium enterprises. Key changes in tax rates, compliance requirements, and filing procedures.</p>
+                        <div class="insight-meta">
+                            <span><i class="fas fa-calendar"></i> December 15, 2024</span>
+                            <span><i class="fas fa-clock"></i> 5 min read</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="trending-insights">
+                    <h4>Trending Topics</h4>
+                    <div class="trending-item">
+                        <h6>Digital Tax Compliance</h6>
+                        <p>How digitalization is changing tax filing processes</p>
+                        <small>Dec 10, 2024</small>
+                    </div>
+                    <div class="trending-item">
+                        <h6>Startup Funding Regulations</h6>
+                        <p>New regulations for startup funding and compliance</p>
+                        <small>Dec 8, 2024</small>
+                    </div>
+                    <div class="trending-item">
+                        <h6>ESG Reporting Standards</h6>
+                        <p>Environmental and social governance reporting requirements</p>
+                        <small>Dec 5, 2024</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Insight Categories -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <h3 class="mb-4">Browse by Category</h3>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="insight-category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h5>Tax Updates</h5>
+                    <p>Latest tax law changes, amendments, and compliance updates</p>
+                    <span class="post-count">12 Articles</span>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="insight-category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h5>Business Strategy</h5>
+                    <p>Strategic insights for business growth and optimization</p>
+                    <span class="post-count">8 Articles</span>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="insight-category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h5>Compliance</h5>
+                    <p>Regulatory compliance guidelines and best practices</p>
+                    <span class="post-count">15 Articles</span>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="insight-category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h5>Industry Trends</h5>
+                    <p>Market trends and industry-specific insights</p>
+                    <span class="post-count">10 Articles</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Insights -->
+        <div class="row">
+            <div class="col-12">
+                <h3 class="mb-4">Recent Insights</h3>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="insight-card">
+                    <div class="insight-card-header">
+                        <span class="insight-category">Compliance</span>
+                        <span class="insight-date">Dec 12, 2024</span>
+                    </div>
+                    <h5>Annual Filing Requirements for FY 2024-25</h5>
+                    <p>Complete guide to annual filing requirements, deadlines, and penalty provisions for different business entities.</p>
+                    <div class="insight-footer">
+                        <span class="read-time"><i class="fas fa-clock"></i> 7 min read</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="insight-card">
+                    <div class="insight-card-header">
+                        <span class="insight-category">Business Strategy</span>
+                        <span class="insight-date">Dec 10, 2024</span>
+                    </div>
+                    <h5>Financial Planning for Small Businesses</h5>
+                    <p>Essential financial planning strategies to help small businesses manage cash flow and achieve sustainable growth.</p>
+                    <div class="insight-footer">
+                        <span class="read-time"><i class="fas fa-clock"></i> 6 min read</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="insight-card">
+                    <div class="insight-card-header">
+                        <span class="insight-category">Tax Updates</span>
+                        <span class="insight-date">Dec 8, 2024</span>
+                    </div>
+                    <h5>Income Tax Deductions for AY 2025-26</h5>
+                    <p>Comprehensive overview of available income tax deductions and how to maximize your tax savings legally.</p>
+                    <div class="insight-footer">
+                        <span class="read-time"><i class="fas fa-clock"></i> 8 min read</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="insight-card">
+                    <div class="insight-card-header">
+                        <span class="insight-category">Industry Trends</span>
+                        <span class="insight-date">Dec 5, 2024</span>
+                    </div>
+                    <h5>Digital Transformation in Accounting</h5>
+                    <p>How technology is revolutionizing accounting practices and what businesses need to know about digital adoption.</p>
+                    <div class="insight-footer">
+                        <span class="read-time"><i class="fas fa-clock"></i> 5 min read</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="insight-card">
+                    <div class="insight-card-header">
+                        <span class="insight-category">Compliance</span>
+                        <span class="insight-date">Dec 3, 2024</span>
+                    </div>
+                    <h5>Corporate Governance Best Practices</h5>
+                    <p>Essential corporate governance practices for maintaining transparency and compliance in business operations.</p>
+                    <div class="insight-footer">
+                        <span class="read-time"><i class="fas fa-clock"></i> 9 min read</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="insight-card">
+                    <div class="insight-card-header">
+                        <span class="insight-category">Business Strategy</span>
+                        <span class="insight-date">Dec 1, 2024</span>
+                    </div>
+                    <h5>Funding Options for Startups in 2025</h5>
+                    <p>Exploring various funding avenues available for startups, from angel investors to government schemes.</p>
+                    <div class="insight-footer">
+                        <span class="read-time"><i class="fas fa-clock"></i> 6 min read</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Newsletter Signup -->
+<section class="newsletter-signup py-5 bg-light">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <h3>Stay Updated with Our Insights</h3>
+                <p>Subscribe to our newsletter and get the latest business insights, tax updates, and compliance news delivered to your inbox.</p>
+                <form class="newsletter-form">
+                    <div class="input-group">
+                        <input type="email" class="form-control" placeholder="Enter your email address">
+                        <button class="btn btn-primary" type="submit">Subscribe</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

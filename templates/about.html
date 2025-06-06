@@ -1,0 +1,185 @@
+{% extends "base.html" %}
+
+{% block title %}About Us - PKS & Associates{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1>About PKS & Associates</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{{ url_for('index') }}">Home</a></li>
+                        <li class="breadcrumb-item active">About Us</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Content -->
+<section class="about-content py-5">
+    <div class="container">
+        <div class="row align-items-center mb-5">
+            <div class="col-lg-6">
+                <h2 class="section-title">Our Story</h2>
+                <p>PKS & Associates has been a trusted name in the field of chartered accountancy for over 15 years. Founded with a vision to provide comprehensive financial and business solutions, we have grown to become one of the leading CA firms in the region.</p>
+                <p>Our journey began with a simple mission: to help businesses navigate the complex world of finance, taxation, and compliance with confidence and ease. Today, we serve over 500 clients across various industries, from startups to large corporations.</p>
+                <p>We pride ourselves on our commitment to excellence, integrity, and personalized service. Our team of qualified professionals brings together extensive experience and deep expertise to deliver solutions that are tailored to each client's unique needs.</p>
+            </div>
+            <div class="col-lg-6">
+                <div class="about-image">
+                    <svg width="100%" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="400" height="300" fill="url(#aboutGradient)" rx="15"/>
+                        <circle cx="100" cy="100" r="40" fill="rgba(255,255,255,0.2)"/>
+                        <circle cx="300" cy="80" r="30" fill="rgba(255,255,255,0.15)"/>
+                        <circle cx="320" cy="200" r="35" fill="rgba(255,255,255,0.1)"/>
+                        <rect x="50" y="150" width="300" height="120" rx="8" fill="rgba(255,255,255,0.9)"/>
+                        <rect x="70" y="170" width="80" height="80" rx="5" fill="var(--primary-color)"/>
+                        <rect x="170" y="175" width="120" height="10" rx="2" fill="var(--secondary-color)"/>
+                        <rect x="170" y="195" width="100" height="8" rx="2" fill="#ccc"/>
+                        <rect x="170" y="210" width="110" height="8" rx="2" fill="#ccc"/>
+                        <rect x="170" y="225" width="90" height="8" rx="2" fill="#ccc"/>
+                        <defs>
+                            <linearGradient id="aboutGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:var(--primary-color);stop-opacity:0.8" />
+                                <stop offset="100%" style="stop-color:var(--secondary-color);stop-opacity:0.8" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mission Vision Values -->
+        <div class="row mb-5">
+            <div class="col-lg-4 mb-4">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h4>Our Mission</h4>
+                    <p>To provide exceptional chartered accountancy services that empower businesses to achieve their financial goals while maintaining the highest standards of compliance and ethics.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h4>Our Vision</h4>
+                    <p>To be the most trusted and respected chartered accountancy firm, known for our expertise, integrity, and commitment to client success in the digital age.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h4>Our Values</h4>
+                    <p>Integrity, Excellence, Client-centricity, Innovation, and Continuous Learning form the foundation of everything we do at PKS & Associates.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Team Section -->
+        <div class="row">
+            <div class="col-12">
+                <h2 class="section-title text-center mb-5">Our Leadership Team</h2>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="team-card">
+                    <div class="team-image">
+                        <svg width="100%" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="200" height="200" fill="var(--primary-light)" rx="10"/>
+                            <circle cx="100" cy="80" r="30" fill="var(--primary-color)"/>
+                            <path d="M70 130 Q100 110 130 130 L130 160 Q100 140 70 160 Z" fill="var(--primary-color)"/>
+                        </svg>
+                    </div>
+                    <div class="team-info">
+                        <h5>CA Pradeep Kumar Singh</h5>
+                        <p class="team-designation">Managing Partner</p>
+                        <p>15+ years of experience in taxation and corporate finance. Specializes in business structuring and compliance management.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="team-card">
+                    <div class="team-image">
+                        <svg width="100%" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="200" height="200" fill="var(--secondary-light)" rx="10"/>
+                            <circle cx="100" cy="80" r="30" fill="var(--secondary-color)"/>
+                            <path d="M70 130 Q100 110 130 130 L130 160 Q100 140 70 160 Z" fill="var(--secondary-color)"/>
+                        </svg>
+                    </div>
+                    <div class="team-info">
+                        <h5>CA Kavita Sharma</h5>
+                        <p class="team-designation">Senior Partner</p>
+                        <p>12+ years of expertise in audit and assurance services. Leads our certification and valuation practice.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="team-card">
+                    <div class="team-image">
+                        <svg width="100%" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="200" height="200" fill="var(--primary-light)" rx="10"/>
+                            <circle cx="100" cy="80" r="30" fill="var(--primary-color)"/>
+                            <path d="M70 130 Q100 110 130 130 L130 160 Q100 140 70 160 Z" fill="var(--primary-color)"/>
+                        </svg>
+                    </div>
+                    <div class="team-info">
+                        <h5>CA Suresh Patel</h5>
+                        <p class="team-designation">Associate Partner</p>
+                        <p>10+ years of experience in corporate law and business registration. Expert in intellectual property matters.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Achievements -->
+<section class="achievements py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center mb-5">
+                <h2 class="section-title">Our Achievements</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="achievement-card">
+                    <div class="achievement-number">500+</div>
+                    <h5>Happy Clients</h5>
+                    <p>Satisfied clients across various industries</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="achievement-card">
+                    <div class="achievement-number">15+</div>
+                    <h5>Years Experience</h5>
+                    <p>Proven track record in the industry</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="achievement-card">
+                    <div class="achievement-number">50+</div>
+                    <h5>Services Offered</h5>
+                    <p>Comprehensive business solutions</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="achievement-card">
+                    <div class="achievement-number">99%</div>
+                    <h5>Success Rate</h5>
+                    <p>Successful project completion rate</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

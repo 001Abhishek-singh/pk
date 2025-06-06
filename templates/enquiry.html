@@ -1,0 +1,225 @@
+{% extends "base.html" %}
+
+{% block title %}Enquiry - {{ category_data.name }} - PKS & Associates{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1>Service Enquiry</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{{ url_for('index') }}">Home</a></li>
+                        <li class="breadcrumb-item"><a href="{{ url_for('services') }}">Services</a></li>
+                        <li class="breadcrumb-item"><a href="{{ url_for('service_category', category=category) }}">{{ category_data.name }}</a></li>
+                        <li class="breadcrumb-item active">Enquiry</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Enquiry Form Section -->
+<section class="enquiry-section py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="enquiry-form">
+                    <div class="form-header">
+                        <h2>{{ category_data.name }} Service Enquiry</h2>
+                        <p class="lead">Fill out the form below and our experts will contact you within 24 hours to discuss your {{ category_data.name.lower() }} requirements.</p>
+                    </div>
+                    
+                    <form method="POST">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="name" class="form-label">Full Name *</label>
+                                <input type="text" class="form-control" id="name" name="name" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="email" class="form-label">Email Address *</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="phone" class="form-label">Phone Number *</label>
+                                <input type="tel" class="form-control" id="phone" name="phone" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="location" class="form-label">Location/City *</label>
+                                <input type="text" class="form-control" id="location" name="location" placeholder="e.g., Mumbai, Delhi" required>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="service_type" class="form-label">Specific Service Required</label>
+                            <select class="form-select" id="service_type" name="service_type">
+                                <option value="">Select specific service (optional)</option>
+                                {% for service in category_data.services %}
+                                <option value="{{ service }}">{{ service }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Additional Details</label>
+                            <textarea class="form-control" id="message" name="message" rows="4" placeholder="Please provide any additional information about your requirements, timeline, or specific questions..."></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="consent" required>
+                                <label class="form-check-label" for="consent">
+                                    I agree to be contacted by PKS & Associates regarding my enquiry and consent to the processing of my personal data for this purpose.
+                                </label>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg">
+                            <i class="fas fa-paper-plane me-2"></i>
+                            Submit Enquiry
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Sidebar -->
+            <div class="col-lg-4">
+                <div class="enquiry-sidebar">
+                    <!-- Service Overview -->
+                    <div class="sidebar-card">
+                        <h4>{{ category_data.name }} Services</h4>
+                        <p>{{ category_data.description }}</p>
+                        <ul class="service-list">
+                            {% for service in category_data.services[:5] %}
+                            <li><i class="fas fa-check-circle"></i> {{ service }}</li>
+                            {% endfor %}
+                            {% if category_data.services|length > 5 %}
+                            <li class="text-muted">... and {{ category_data.services|length - 5 }} more services</li>
+                            {% endif %}
+                        </ul>
+                        <a href="{{ url_for('service_category', category=category) }}" class="btn btn-outline-primary btn-sm">View All Services</a>
+                    </div>
+                    
+                    <!-- Contact Info -->
+                    <div class="sidebar-card">
+                        <h4>Quick Contact</h4>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <strong>Call Us</strong>
+                                <p>+91 98765 43210</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <strong>Email Us</strong>
+                                <p>info@pks.co.in</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <strong>Business Hours</strong>
+                                <p>Mon-Fri: 9AM-6PM<br>Sat: 9AM-2PM</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Why Choose Us -->
+                    <div class="sidebar-card">
+                        <h4>Why Choose Us?</h4>
+                        <div class="feature-item">
+                            <i class="fas fa-award"></i>
+                            <div>
+                                <strong>15+ Years Experience</strong>
+                                <small>Proven track record in {{ category_data.name.lower() }}</small>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-users"></i>
+                            <div>
+                                <strong>Expert Team</strong>
+                                <small>Qualified professionals dedicated to your success</small>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <strong>Timely Delivery</strong>
+                                <small>We meet all deadlines without compromising quality</small>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-handshake"></i>
+                            <div>
+                                <strong>Personalized Service</strong>
+                                <small>Tailored solutions for your specific needs</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Process Timeline -->
+<section class="process-timeline py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center mb-5">
+                <h2 class="section-title">What Happens Next?</h2>
+                <p class="section-subtitle">Our simple and transparent process after you submit your enquiry</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="timeline-step">
+                    <div class="timeline-number">1</div>
+                    <div class="timeline-icon">
+                        <i class="fas fa-paper-plane"></i>
+                    </div>
+                    <h4>Enquiry Submitted</h4>
+                    <p>Your enquiry is received and assigned to our expert team</p>
+                    <span class="timeline-duration">Immediate</span>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="timeline-step">
+                    <div class="timeline-number">2</div>
+                    <div class="timeline-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h4>Expert Contact</h4>
+                    <p>Our specialist will call you to understand your requirements</p>
+                    <span class="timeline-duration">Within 4 hours</span>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="timeline-step">
+                    <div class="timeline-number">3</div>
+                    <div class="timeline-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h4>Proposal Shared</h4>
+                    <p>Detailed proposal with timeline and pricing will be shared</p>
+                    <span class="timeline-duration">Within 24 hours</span>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="timeline-step">
+                    <div class="timeline-number">4</div>
+                    <div class="timeline-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h4>Service Delivery</h4>
+                    <p>Professional service delivery as per agreed terms</p>
+                    <span class="timeline-duration">As per timeline</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
