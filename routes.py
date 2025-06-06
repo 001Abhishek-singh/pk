@@ -124,7 +124,7 @@ def index():
 
 @app.route('/about')
 def about():
-    return render_template('about.html')
+    return render_template('about.html', service_categories=SERVICE_CATEGORIES)
 
 @app.route('/services')
 def services():
@@ -143,7 +143,7 @@ def service_category(category):
 
 @app.route('/insights')
 def insights():
-    return render_template('insights.html')
+    return render_template('insights.html', service_categories=SERVICE_CATEGORIES)
 
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
@@ -156,15 +156,14 @@ def contact():
         
         if not all([name, email, subject, message]):
             flash('Please fill in all required fields', 'error')
-            return render_template('contact.html')
+            return render_template('contact.html', service_categories=SERVICE_CATEGORIES)
         
-        contact_entry = Contact(
-            name=name,
-            email=email,
-            phone=phone,
-            subject=subject,
-            message=message
-        )
+        contact_entry = Contact()
+        contact_entry.name = name
+        contact_entry.email = email
+        contact_entry.phone = phone
+        contact_entry.subject = subject
+        contact_entry.message = message
         
         try:
             db.session.add(contact_entry)
@@ -176,7 +175,7 @@ def contact():
             flash('There was an error submitting your message. Please try again.', 'error')
             app.logger.error(f"Contact form error: {e}")
     
-    return render_template('contact.html')
+    return render_template('contact.html', service_categories=SERVICE_CATEGORIES)
 
 @app.route('/enquiry/<category>', methods=['GET', 'POST'])
 def enquiry(category):
@@ -197,14 +196,13 @@ def enquiry(category):
                                  category=category, 
                                  category_data=SERVICE_CATEGORIES[category])
         
-        enquiry_entry = Enquiry(
-            name=name,
-            email=email,
-            phone=phone,
-            location=location,
-            service_category=category,
-            message=message
-        )
+        enquiry_entry = Enquiry()
+        enquiry_entry.name = name
+        enquiry_entry.email = email
+        enquiry_entry.phone = phone
+        enquiry_entry.location = location
+        enquiry_entry.service_category = category
+        enquiry_entry.message = message
         
         try:
             db.session.add(enquiry_entry)
@@ -230,14 +228,13 @@ def consultancy():
         
         if not all([name, phone, location, message]):
             flash('Please fill in all required fields', 'error')
-            return render_template('consultancy.html')
+            return render_template('consultancy.html', service_categories=SERVICE_CATEGORIES)
         
-        consultancy_entry = Consultancy(
-            name=name,
-            phone=phone,
-            location=location,
-            message=message
-        )
+        consultancy_entry = Consultancy()
+        consultancy_entry.name = name
+        consultancy_entry.phone = phone
+        consultancy_entry.location = location
+        consultancy_entry.message = message
         
         try:
             db.session.add(consultancy_entry)
@@ -249,7 +246,7 @@ def consultancy():
             flash('There was an error submitting your request. Please try again.', 'error')
             app.logger.error(f"Consultancy form error: {e}")
     
-    return render_template('consultancy.html')
+    return render_template('consultancy.html', service_categories=SERVICE_CATEGORIES)
 
 @app.route('/search')
 def search():
