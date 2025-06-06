@@ -257,7 +257,7 @@ a:hover {
 
 /* Button Styles */
 .btn-consultancy {
-    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--secondary-dark) 100%);
+    background: var(--secondary-color);
     border: none;
     color: var(--white);
     padding: var(--spacing-sm) var(--spacing-lg);
@@ -267,14 +267,14 @@ a:hover {
 }
 
 .btn-consultancy:hover {
-    background: linear-gradient(135deg, var(--secondary-dark) 0%, var(--secondary-color) 100%);
+    background: var(--secondary-dark);
     color: var(--white);
     transform: translateY(-1px);
     box-shadow: var(--shadow);
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    background: var(--primary-color);
     border: none;
     border-radius: var(--border-radius);
     padding: var(--spacing-sm) var(--spacing-lg);
@@ -283,7 +283,7 @@ a:hover {
 }
 
 .btn-primary:hover {
-    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-color) 100%);
+    background: var(--primary-dark);
     transform: translateY(-1px);
     box-shadow: var(--shadow);
 }
@@ -331,7 +331,7 @@ a:hover {
 }
 
 .dropdown-item:hover {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    background: var(--primary-color);
     color: var(--white);
 }
 
