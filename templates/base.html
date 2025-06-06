@@ -20,8 +20,11 @@
         <nav class="navbar navbar-expand-lg">
             <div class="container">
                 <a class="navbar-brand" href="{{ url_for('index') }}">
-                    <strong>PKS & Associates</strong>
-                    <small class="d-block">Chartered Accountants</small>
+                    <img src="{{ url_for('static', filename='images/pks-logo.png') }}" alt="PKS & Associates" height="50" class="me-2">
+                    <div class="brand-text">
+                        <strong>PKS & Associates</strong>
+                        <small class="d-block">Chartered Accountants</small>
+                    </div>
                 </a>
                 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
